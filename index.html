@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/styles.css"
+    />
+    <title>Encriptador de textos</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">E.M Developer</h1>
+    </header>
+    <main>
+      <section id="encryptionSection">
+        <div class="textarea-container">
+          <textarea
+            id="encriptar"
+            class="text-input"
+            placeholder="Ingrese el texto aqui"
+          ></textarea>
+          <div class="alert-container">
+            <img
+              src="./img/alert.svg"
+              alt="Ícono de alerta: Solo letras minúsculas y sin acentos"
+            />
+            <span>Solo letras minúsculas y sin acentos</span>
+          </div>
+        </div>
+        <div class="button-container">
+          <button
+            id="encriptarBtn"
+            class="action-btn"
+          >
+            Encriptar
+          </button>
+          <button
+            id="desencriptarBtn"
+            class="action-btn"
+          >
+            Desencriptar
+          </button>
+        </div>
+      </section>
+      <section id="decryptionSection">
+        <div class="textarea-container">
+          <div id="respuestaContainer">
+            <p>Ningún mensaje fue encontrado</p>
+            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+          </div>
+          <button class="hidden action-btn">Copiar</button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <p>
+          ©
+          <script>
+            document.write(new Date().getFullYear())
+          </script>
+          -Desarrollado por Elias Martinez
+        </p>
+      </div>
+    </footer>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

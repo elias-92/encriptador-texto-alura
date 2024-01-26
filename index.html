@@ -10,6 +10,19 @@
       rel="stylesheet"
       href="./css/styles.css"
     />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Poppins:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
     <title>Encriptador de textos</title>
   </head>
   <body>
@@ -48,12 +61,19 @@
         </div>
       </section>
       <section id="decryptionSection">
-        <div class="textarea-container">
-          <div id="respuestaContainer">
+        <div class="decrytion-container">
+          <img
+            src="./img/Muñeco.png"
+            alt="imagen que hace referencia a que no se encontro texto"
+          />
+          <div
+            id="respuestaContainer"
+            class="decrytion-respuesta"
+          >
             <p>Ningún mensaje fue encontrado</p>
             <p>Ingresa el texto que desees encriptar o desencriptar.</p>
           </div>
-          <button class="hidden action-btn">Copiar</button>
+          <button class="action-btn copy-btn">Copiar</button>
         </div>
       </section>
     </main>

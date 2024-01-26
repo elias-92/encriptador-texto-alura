@@ -49,12 +49,14 @@
           <button
             id="encriptarBtn"
             class="action-btn"
+            onclick="encriptarTexto()"
           >
             Encriptar
           </button>
           <button
             id="desencriptarBtn"
             class="action-btn"
+            onclick="desencriptarTexto()"
           >
             Desencriptar
           </button>
@@ -62,18 +64,22 @@
       </section>
       <section id="decryptionSection">
         <div class="decrytion-container">
-          <img
-            src="./img/Muñeco.png"
-            alt="imagen que hace referencia a que no se encontro texto"
-          />
-          <div
-            id="respuestaContainer"
-            class="decrytion-respuesta"
-          >
-            <p>Ningún mensaje fue encontrado</p>
-            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+          <div id="respuestaContainer">
+            <img
+              src="./img/Muñeco.png"
+              alt="imagen que hace referencia a que no se encontro texto"
+            />
+            <div class="decrytion-respuesta">
+              <p class="decrytion-parrafo">Ningún mensaje fue encontrado</p>
+              <p class="decrytion-parrafo">Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
           </div>
-          <button class="action-btn copy-btn">Copiar</button>
+          <button
+            class="action-btn copy-btn"
+            onclick="copiarContenido()"
+          >
+            Copiar
+          </button>
         </div>
       </section>
     </main>

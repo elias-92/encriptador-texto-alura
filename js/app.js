@@ -2,7 +2,10 @@ function procesarTexto(callback) {
   const inputText = document.querySelector('#encriptar').value
 
   if (!caracteresEspeciales(inputText)) {
-    alert('El texto NO debe contener caracteres especiales, letras minúsculas y acentos.')
+    alertModal(
+      'El texto NO debe contener caracteres especiales, letras minúsculas y acentos.',
+      'error-color'
+    )
     return
   }
   // El callback seria quitarEncriptacion o agregarEncriptacion dependiendo del btn presionado
@@ -67,15 +70,46 @@ function quitarEncriptacion(texto) {
   // Reemplazar cada palabra por su equivalente en la clave
   return texto.replace(regex, (match) => clave[match])
 }
+// Funcion para verificar carectere especiales, acentos y mayusculas
 function caracteresEspeciales(texto) {
   return /^[a-z\s]+$/.test(texto)
 }
+// Funcion para copiar texto
 async function copiarContenido() {
   const texto = document.querySelector('.textarea-output').value
   try {
     await navigator.clipboard.writeText(texto)
-    alert('Contenido copiado al portapapeles')
+    alertModal('Contenido copiado al portapapeles', 'success-color')
   } catch (err) {
-    alert('Error al copiar: ', err)
+    alertModal('Error al copiar: ' + err, 'error-color')
   }
+}
+// Funcion para mostrar modal de alertas
+function alertModal(message, color) {
+  const showModal = document.getElementById('main')
+
+  const alertContainer = document.createElement('div')
+  alertContainer.classList.add('modal-container')
+
+  const backgroundColor = document.createElement('div')
+  backgroundColor.classList.add(color)
+  alertContainer.appendChild(backgroundColor)
+
+  const texto = document.createElement('p')
+  texto.classList.add('modal-text')
+  texto.textContent = message
+  alertContainer.appendChild(texto)
+
+  showModal.appendChild(alertContainer)
+
+  // Agregar la clase 'active' después de un breve retraso
+  setTimeout(() => {
+    alertContainer.classList.add('active')
+  }, 10)
+
+  // Eliminar el modal y la clase 'active' después de 3000 milisegundos
+  setTimeout(() => {
+    alertContainer.classList.remove('active')
+    showModal.removeChild(alertContainer)
+  }, 3000)
 }

@@ -1,6 +1,10 @@
 function procesarTexto(callback) {
-  const inputText = document.querySelector('#encriptar').value
+  const inputText = document.querySelector('#encriptar').value.trim()
 
+  if (inputText.length < 1) {
+    alertModal('Por favor ingresa un texto', 'error-color')
+    return
+  }
   if (!caracteresEspeciales(inputText)) {
     alertModal(
       'El texto NO debe contener caracteres especiales, letras minúsculas y acentos.',
@@ -8,6 +12,7 @@ function procesarTexto(callback) {
     )
     return
   }
+
   // El callback seria quitarEncriptacion o agregarEncriptacion dependiendo del btn presionado
   const result = callback(inputText)
 
